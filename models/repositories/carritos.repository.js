@@ -1,6 +1,6 @@
-import Carrito from '../Carrito.model.js'
-import CarritosDto from '../dto/Carritos.dto.js'
-import CarritosDaoFactory from '../daos/CarritosDaoFactory.js'
+import Carrito from '../carrito.model.js'
+import CarritosDto from '../dto/carritos.dto.js'
+import CarritosDaoFactory from '../daos/carritosDaoFactory.js'
 
 export default class CarritosRepository {
     constructor() {
