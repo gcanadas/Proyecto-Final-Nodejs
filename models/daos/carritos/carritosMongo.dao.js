@@ -1,7 +1,7 @@
 import ContenedorMongoDb from '../../contenedores/contenedorMongoDb.js'
 import CartModel from '../../model/carritos.js'
 import logger from '../../../utils/logger.js'
-import CarritosDto from '../../dto/Carritos.dto.js'
+import CarritosDto from '../../dto/carritos.dto.js'
 
 let carritoInstance = null;
 
