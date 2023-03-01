@@ -1,0 +1,968 @@
+{
+	"info": {
+		"_postman_id": "98febb92-f649-4e52-9e07-2abf34f001af",
+		"name": "Trabajo-Final-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23484183"
+	},
+	"item": [
+		{
+			"name": "Inicio sin estar logueado",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inicio estando logueado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiYWRtaW5AY29kZXJob3VzZS5jb20iLCJmaXJzdG5hbWUiOiJBZG1pbmlzdHJhZG9yIiwibGFzdG5hbWUiOiItIiwicGhvbmUiOjB9LCJpYXQiOjE2Nzc2MjMxNDcsImV4cCI6MTY3NzcwOTU0N30.RUh7svVmKNuKOuRx8TLCaeBMwToRtf2kx79SsM0VCB4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login incorrecto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "prueba@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login correcto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "marcelo@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "contraseña",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de usuario con error",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "prueba2@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "25248",
+							"type": "text"
+						},
+						{
+							"key": "passwordConfirmation",
+							"value": "25245",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "Gaston",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "Perez",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "5426554749",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registro de usuario correcto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "gcanadas10@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "contraseña25",
+							"type": "text"
+						},
+						{
+							"key": "passwordConfirmation",
+							"value": "contraseña25",
+							"type": "text"
+						},
+						{
+							"key": "firstname",
+							"value": "Gabriel",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "Cañadas",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "5426897567",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login con token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzQ2MzE4NywiZXhwIjoxNjc3NTQ5NTg3fQ.GwXg4ETahBDxJFzXmEuXEDTKR9uyma5V32OQqbvJq-M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Productos sin login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Productos con login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzQ2MzE4NywiZXhwIjoxNjc3NTQ5NTg3fQ.GwXg4ETahBDxJFzXmEuXEDTKR9uyma5V32OQqbvJq-M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cargar Productos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzQ2MzE4NywiZXhwIjoxNjc3NTQ5NTg3fQ.GwXg4ETahBDxJFzXmEuXEDTKR9uyma5V32OQqbvJq-M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Bioshock",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"value": "https://playtecgames.com/wp-content/uploads/2021/09/BioShock-The-Collection.jpg",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "BioShock es un videojuego de disparos en primera persona y terror, desarrollado por Irrational Games, publicado el 21 de agosto de 2007 en Norteamérica para el sistema operativo Windows y la consola Xbox 360, tres días después en algunos países de Europa y Australia.",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "9",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Shooter",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Producto por id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzQ2MzE4NywiZXhwIjoxNjc3NTQ5NTg3fQ.GwXg4ETahBDxJFzXmEuXEDTKR9uyma5V32OQqbvJq-M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos/63fc5c03e1c817d56da41fff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"63fc5c03e1c817d56da41fff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Producto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzQ2MzE4NywiZXhwIjoxNjc3NTQ5NTg3fQ.GwXg4ETahBDxJFzXmEuXEDTKR9uyma5V32OQqbvJq-M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Red Dead Redemption 2",
+							"type": "text"
+						},
+						{
+							"key": "thumbnail",
+							"value": "https://www.xgame-stores.com/image/cache/catalog/CD%20PS4/cd%20cover/Red%20Dead%20Redemption%202-412x489.png",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "30",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Red Dead Redemption 2, estilizado Red Dead Redemption II, es un videojuego de acción-aventura western basado en el drama, en un mundo abierto y en perspectiva de primera y tercera persona, ​ con componentes para un jugador y multijugador.​",
+							"type": "text"
+						},
+						{
+							"key": "stock",
+							"value": "8",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "Accion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/productos/63fc5c03e1c817d56da41fff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"63fc5c03e1c817d56da41fff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Producto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzQ2MzE4NywiZXhwIjoxNjc3NTQ5NTg3fQ.GwXg4ETahBDxJFzXmEuXEDTKR9uyma5V32OQqbvJq-M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/productos/63fc6c4371c8d62f0b0b5392",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"63fc6c4371c8d62f0b0b5392"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener productos por categoria",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzQ2MzE4NywiZXhwIjoxNjc3NTQ5NTg3fQ.GwXg4ETahBDxJFzXmEuXEDTKR9uyma5V32OQqbvJq-M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/productos/categoria/Accion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"productos",
+						"categoria",
+						"Accion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener/Crear carrito de compras",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ2NhbmFkYXMxMEBnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJHYWJyaWVsIiwibGFzdG5hbWUiOiJDYcOxYWRhcyIsInBob25lIjo1NDI2ODk3NTY3fSwiaWF0IjoxNjc3NjE4NTgwLCJleHAiOjE2Nzc3MDQ5ODB9.yVmbMsPSdA8QQB8xX4L2t7-9Q3UciQhgjaHfrzCHsf8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/carrito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carrito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar la dirección de un envio",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzU0MTEzMiwiZXhwIjoxNjc3NjI3NTMyfQ._sbtBZOEVdj2BNvQg0KWUxmQjm3MsZG2pYQKfYH_mMI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "address",
+							"value": "Av. Libertador General San Martin 1109 (oeste)",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/carrito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carrito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Producto al Carrito",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ2NhbmFkYXMxMEBnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJHYWJyaWVsIiwibGFzdG5hbWUiOiJDYcOxYWRhcyIsInBob25lIjo1NDI2ODk3NTY3fSwiaWF0IjoxNjc3NjE4NTgwLCJleHAiOjE2Nzc3MDQ5ODB9.yVmbMsPSdA8QQB8xX4L2t7-9Q3UciQhgjaHfrzCHsf8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "63fc5c03e1c817d56da41fff",
+							"description": "Agregar el id de algun producto disponible en la base de datos",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "6",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/carrito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carrito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar la cantidad de un producto en el carrito",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzU0MTEzMiwiZXhwIjoxNjc3NjI3NTMyfQ._sbtBZOEVdj2BNvQg0KWUxmQjm3MsZG2pYQKfYH_mMI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "quantity",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/carrito/63fc5d89e1c817d56da42003",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carrito",
+						"63fc5d89e1c817d56da42003"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un producto en el carrito",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzU0MTEzMiwiZXhwIjoxNjc3NjI3NTMyfQ._sbtBZOEVdj2BNvQg0KWUxmQjm3MsZG2pYQKfYH_mMI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "quantity",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/carrito/63fc5ce0e1c817d56da42001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carrito",
+						"63fc5ce0e1c817d56da42001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar el carrito",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzU0MTEzMiwiZXhwIjoxNjc3NjI3NTMyfQ._sbtBZOEVdj2BNvQg0KWUxmQjm3MsZG2pYQKfYH_mMI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "quantity",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/carrito",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carrito"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generar Orden",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ2NhbmFkYXMxMEBnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJHYWJyaWVsIiwibGFzdG5hbWUiOiJDYcOxYWRhcyIsInBob25lIjo1NDI2ODk3NTY3fSwiaWF0IjoxNjc3NjE4NTgwLCJleHAiOjE2Nzc3MDQ5ODB9.yVmbMsPSdA8QQB8xX4L2t7-9Q3UciQhgjaHfrzCHsf8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/carrito/orden",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"carrito",
+						"orden"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generar mensaje",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoibWFyY2Vsb0BnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJNYXJjZWxvIiwibGFzdG5hbWUiOiJTZWd1cmEiLCJwaG9uZSI6NTQyNjg5NzU0MX0sImlhdCI6MTY3NzYyMzgyMywiZXhwIjoxNjc3NzEwMjIzfQ.fV4LRJ78asxNcAXayNXf0RKi7jbBUSJPquF_J8nHysw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "message",
+							"value": "Hay descuento por pago de contado?",
+							"description": "Escribir el mensaje que se desea enviar",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/chat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener mensajes de un usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ2NhbmFkYXMxMEBnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJHYWJyaWVsIiwibGFzdG5hbWUiOiJDYcOxYWRhcyIsInBob25lIjo1NDI2ODk3NTY3fSwiaWF0IjoxNjc3NjE4NTgwLCJleHAiOjE2Nzc3MDQ5ODB9.yVmbMsPSdA8QQB8xX4L2t7-9Q3UciQhgjaHfrzCHsf8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/chat/gcanadas10@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chat",
+						"gcanadas10@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Intentar acceder a mensajes de otros usuarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiZ2NhbmFkYXMxMEBnbWFpbC5jb20iLCJmaXJzdG5hbWUiOiJHYWJyaWVsIiwibGFzdG5hbWUiOiJDYcOxYWRhcyIsInBob25lIjo1NDI2ODk3NTY3fSwiaWF0IjoxNjc3NjE4NTgwLCJleHAiOjE2Nzc3MDQ5ODB9.yVmbMsPSdA8QQB8xX4L2t7-9Q3UciQhgjaHfrzCHsf8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/chat/gcanadas@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chat",
+						"gcanadas@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los mensajes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiYWRtaW5AY29kZXJob3VzZS5jb20iLCJmaXJzdG5hbWUiOiJBZG1pbmlzdHJhZG9yIiwibGFzdG5hbWUiOiItIiwicGhvbmUiOjB9LCJpYXQiOjE2Nzc2MjMxNDcsImV4cCI6MTY3NzcwOTU0N30.RUh7svVmKNuKOuRx8TLCaeBMwToRtf2kx79SsM0VCB4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/chat/admin/mensajes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chat",
+						"admin",
+						"mensajes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Responder mensajes de usuarios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/chat/admin/mensajes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"chat",
+						"admin",
+						"mensajes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obtener configuraciones del servidor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/config",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"config"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
