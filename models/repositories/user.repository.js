@@ -1,5 +1,5 @@
 import User from '../user.model.js'
-import UsersDto from '../dto/Users.dto.js'
+import UsersDto from '../dto/users.dto.js'
 import UsersDaoFactory from '../daos/usersDaoFactory.js'
 
 export default class UsersRepository {
