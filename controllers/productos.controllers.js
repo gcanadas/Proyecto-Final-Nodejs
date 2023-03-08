@@ -25,7 +25,7 @@ export async function getById(req, res, next) {
     try {
         const productos = await ProductosService.getById(req.params.id)
         if(!productos.id) {
-            return res.status(200).json({message: `No se encontro ningun producto con el id ${req.params.id}`})
+            return res.status(404).json({message: `No se encontro ningun producto con el id ${req.params.id}`})
         }
         return res.status(200).json(productos) 
     } catch (error) {

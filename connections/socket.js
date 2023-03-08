@@ -1,6 +1,6 @@
 import { Server } from 'socket.io';
 import logger from '../utils/logger.js';
-import chatsController from '../controllers/chats.controller.js';
+import chatsService from '../services/chats.services.js'
 
 let io;
 
@@ -11,13 +11,12 @@ function initSocket(httpServer) {
 
 async function setEvents(io) {
     io.on('connect', async (socketClient) => {
-        const mensajes = await chatsController.getAllMessages();
+        const mensajes = await chatsService.getAllMessages();
         io.emit('historyMessage', mensajes);
         logger.info(`Se conecto el cliente con el id: ${socketClient.id}`);
 
         socketClient.on('newMessage', async (data) => {
-                await chatsController.resMessage(data);
-                io.emit('historyMessage', mensajes);
+                await chatsService.resMessage(data);
                 io.emit('messageNotification', data);
         });
 
